@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Graph : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Node> nodes;
+
+    public Graph()
     {
-        
+        nodes = new List<Node>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddNode(Node node)
     {
-        
+        nodes.Add(node);
+    }
+
+    public void ConnectNodes(Node from, Node to, float cost)
+    {
+        from.edges.Add(new Edge(to, cost));
+        to.edges.Add(new Edge(from, cost)); // Si la conexión es bidireccional
     }
 }
+
+
