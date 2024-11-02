@@ -47,6 +47,7 @@ public class GraphManager : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        if (graph == null) return;
 
         foreach (var node in graph.nodes)
         {
